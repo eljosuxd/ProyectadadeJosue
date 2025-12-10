@@ -1,0 +1,153 @@
+body {
+            background-color: #008080; /* Fondo de escritorio Aqua */
+            font-family: 'MS Sans Serif', Arial, Helvetica, sans-serif;
+            color: #000000;
+            margin: 0;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .window {
+            width: 700px;
+            background-color: #C0C0C0; /* Gris Win98 */
+            border: 1px solid #FFFFFF;
+            border-style: outset; /* Efecto 3D */
+            max-width: 90%; 
+        }
+
+        .title-bar {
+            background: linear-gradient(to right, #000080, #108ED4); /* Barra de título azul */
+            color: white;
+            padding: 3px 5px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: default;
+        }
+
+        .title-bar-controls button {
+            background-color: #C0C0C0;
+            border: 1px solid #000000;
+            padding: 0 5px;
+            font-size: 12px;
+            margin-left: 2px;
+            cursor: pointer;
+        }
+
+        .window-content {
+            padding: 15px;
+            background-color: #FFFFFF; /* Área de contenido blanca */
+            border: 1px solid #808080;
+            margin: 5px;
+            overflow-y: auto;
+        }
+
+        h1 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #000000;
+            text-align: center;
+            border-bottom: 1px dashed #808088;
+            padding-bottom: 5px;
+        }
+
+        h2 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 5px;
+            border-left: 4px solid #808080;
+            padding-left: 5px;
+        }
+        
+        p, ul {
+            font-size: 13px;
+            margin-bottom: 10px;
+            padding-left: 10px;
+        }
+
+        ul {
+            list-style-type: square; /* Viñetas cuadradas */
+            margin-left: 20px;
+        }
+
+        /* --- Infografía Dinámica con CSS Grid (Win98 Style) --- */
+        .infographic {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #C0C0C0; /* Fondo gris de la UI */
+            border-style: inset; /* Borde interior 3D */
+            border-width: 2px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); 
+            gap: 4px;
+            height: 150px; /* Incrementamos la altura total para tener espacio para las barras */
+            align-items: flex-end;
+            border-left: 1px solid #333;
+            border-bottom: 1px solid #333;
+            padding-left: 4px;
+            padding-bottom: 4px;
+            position: relative;
+            /* Añadimos overflow: hidden; para asegurarnos que nada se salga de este contenedor */
+            overflow: hidden; 
+        }
+
+        .bar {
+            background-color: #FF0000; /* Rojo sólido (color de error Win98) */
+            color: white;
+            font-size: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding-bottom: 3px;
+            border: 1px solid #000;
+            
+            /* FIX: Establecemos la altura final por defecto, y la animación la usa como el 100% */
+            height: var(--height); 
+            animation: grow 2s ease-out forwards; 
+        }
+
+        /* Línea de referencia 1.5C (posición ajustada a la nueva altura del contenedor) */
+        .grid-container::after {
+            content: "Límite Crítico 1.5°C";
+            position: absolute;
+            bottom: 100px; /* Ajustada la posición */
+            left: 0;
+            right: 0;
+            border-top: 1px dashed #000000;
+            color: #000000;
+            font-size: 11px;
+            padding-left: 5px;
+            background-color: #C0C0C0;
+        }
+
+        /* FIX: La animación ahora pasa de 0% al 100% de la altura ya establecida por --height */
+        @keyframes grow {
+            0% { 
+                height: 0; 
+                opacity: 0; 
+            }
+            100% { 
+                height: var(--height); 
+                opacity: 1; 
+            }
+        }
+
+        .status-bar {
+            background-color: #C0C0C0;
+            border-top: 1px solid #FFFFFF;
+            border-bottom: 1px solid #808080;
+            padding: 2px 5px;
+            font-size: 12px;
+            margin: 5px;
+            border-style: inset;
+            text-align: left;
+        }

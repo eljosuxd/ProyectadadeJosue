@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Planeta en crisis</title>
+</head>
+<link rel="stylesheet" href="Style1.css">
+<body>
+    <div class="window">
+        <div class="title-bar">
+            <div class="title-bar-text">🌎 Planeta en crisis.com</div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize">_</button>
+                <button aria-label="Maximize">◻</button>
+                <button aria-label="Close">X</button>
+            </div>
+        </div>
+        <div class="window-content">
+            <img src="C:\Users\Jisue\OneDrive\Pictures\photos\DGETI_.png" alt="Bodrietis" width="50" height="50">
+            
+            <h6>Act. 3. Proyecto Final.<br>profesor: Sergio Adolfo Mireles Preciado.<br>Materia: Emplea Frameworks Para El Desarrollo De Software<br>By Josue Luis Juan Becerra 5°B Programacion T/M.<br></h6>
+            
+            <h1>Nuestro Planeta en Crisis</h1><br>
+            
+            <p>El objetivo de este proyecto es tratar de generar conciencia y demostrar el estado en el que la humanidad mantiene el planeta, tomando en cuenta 
+                que el calentamiento global está muy mal y es una crisis climática grave, con efectos alarmantes como el aumento de temperaturas, eventos 
+                climáticos extremos más frecuentes e intensos (sequías, inundaciones, huracanes), derretimiento de glaciares y subida del nivel del mar, afectando 
+                salud, seguridad alimentaria y ecosistemas, y amenazando con impactos irreversibles si no se toman medidas urgentes.
+            </p>
+            <br>
+            
+            <div class="menu-container">
+                <button onclick="toggleMenu()" class="menu-button">
+                    Menú de Navegación
+                </button>
+                
+                <div id="myMenu" class="menu-content">
+                    <a href="calentamiento.html">Calentamiento Global</a>
+                    <a href="Efecto invernadero.html">Efecto Invernadero</a>
+                    <a href="Reciclaje.html">Reciclaje</a>
+                    <a href="Contaminacion Global.html">Contaminacion Global</a>
+                    <a href="Desaparicion de Fauna y flora.html">Desaparicion de Fauna y flora</a>
+                </div>
+            </div>
+
+        </div> 
+
+        <div class="status-bar">
+            Cargando página: Planeta_En_Crisis... Listo.
+        </div>
+    </div> 
+
+    <script>
+        
+        function toggleMenu() {
+            var menu = document.getElementById("myMenu");
+            menu.classList.toggle("show");
+        }
+        
+        window.onclick = function(event) {
+            if (!event.target.matches('.menu-button')) {
+                var dropdowns = document.getElementsByClassName("menu-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

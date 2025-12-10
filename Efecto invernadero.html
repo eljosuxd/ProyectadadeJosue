@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Efecto Invernadero</title>
+    <link rel="stylesheet" href="Style3.css">
+</head>
+<body>
+
+    <div class="window">
+        <div class="title-bar">
+            <div class="title-bar-text">🔬 INFO: EFECTO INVERNADERO </div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize">_</button>
+                <button aria-label="Maximize">◻</button>
+                <button aria-label="Close">X</button>
+            </div>
+        </div>
+
+        <div class="window-content">
+            <h1>:: EL EFECTO INVERNADERO ::</h1>
+            
+            <h2>Cómo funciona</h2>
+            <p>
+                El efecto invernadero es un proceso natural. Ciertos gases en la atmósfera retienen parte del calor del Sol, impidiendo que escape directamente al espacio.
+            </p>
+
+            <h2>Visualización en JS</h2>
+            <div class="carousel-box">
+                <p>haz click en los botones para ver diferentes aspectos del proceso.</p>
+                
+                <div class="carousel-container">
+                    <!-- Slide 1: Reemplaza src con tus imágenes -->
+                    <img class="carousel-slide" src="C:\Users\Jisue\Downloads\recursamiento\Proyecto final\fotos\calor.jpg" alt="Slide 1: Sol calienta la Tierra">
+                    
+                    <!-- Slide 2: Reemplaza src con tus imágenes -->
+                    <img class="carousel-slide" src="C:\Users\Jisue\Downloads\recursamiento\Proyecto final\fotos\sols.png" alt="Slide 2: Gases retienen calor">
+
+                    <!-- Slide 3: Reemplaza src con tus imágenes -->
+                    <img class="carousel-slide" src="C:\Users\Jisue\Downloads\recursamiento\Proyecto final\fotos\gases.jpg" alt="Slide 3: Consecuencias">
+
+                    <!-- Botones -->
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <p id="slide-caption" style="font-size: 11px; margin-top: 5px;">Imagen 1 de 3</p>
+            </div>
+            
+            <h2>Gases de efecto invernadero (GEI)</h2>
+            <p>
+                Los principales gases responsables son: Dióxido de Carbono, Metano, Óxido Nitroso y Gases Fluorados.
+            </p>
+            
+            <h2>Emisiones por actividades humanas</h2>
+            <p>
+                La quema de carbón, petróleo y gas natural es la fuente principal de CO2 adicional.
+            </p>
+
+            <h2>Consecuencias en océanos, climas y biodiversidad</h2>
+            <p>
+                El exceso de calor retenido está provocando: Acidificación oceánica, aumento del nivel del mar, eventos climáticos extremos y extinción masiva de especies.
+            </p>
+
+        </div> <!-- Fin window-content -->
+
+        <div class="status-bar">
+            Carrusel JS cargado.
+        </div>
+    </div> <!-- Fin window -->
+
+    <script>
+        // --- Lógica de JavaScript para el Carrusel ---
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("carousel-slide");
+            let captionText = document.getElementById("slide-caption");
+            
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            
+            slides[slideIndex-1].style.display = "block";
+            captionText.textContent = "Imagen " + slideIndex + " de " + slides.length;
+        }
+    </script>
+
+</body>
+</html>

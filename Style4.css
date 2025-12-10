@@ -1,0 +1,64 @@
+      body {
+            background-color: #008080; font-family: 'MS Sans Serif', Arial, Helvetica, sans-serif;
+            color: #000000; margin: 0; padding: 10px; display: flex; justify-content: center;
+            align-items: center; min-height: 100vh;
+        }
+        .window {
+            width: 750px; background-color: #C0C0C0; border: 1px solid #FFFFFF;
+            border-style: outset; max-width: 90%; 
+        }
+        .title-bar {
+            background: linear-gradient(to right, #000080, #108ED4); color: white;
+            padding: 3px 5px; font-weight: bold; display: flex;
+            justify-content: space-between; align-items: center; cursor: default;
+        }
+        .title-bar-controls button {
+            background-color: #C0C0C0; border: 1px solid #000000; padding: 0 5px;
+            font-size: 12px; margin-left: 2px; cursor: pointer;
+        }
+        .window-content {
+            padding: 15px; background-color: #FFFFFF; border: 1px solid #808080;
+            margin: 5px; overflow-y: auto;
+        }
+        h1 {
+            font-size: 18px; font-weight: bold; margin-bottom: 10px; color: #000000;
+            text-align: center; border-bottom: 1px dashed #808088; padding-bottom: 5px;
+        }
+        h2 {
+            font-size: 16px; font-weight: bold; margin-top: 20px; margin-bottom: 5px;
+            border-left: 4px solid #808080; padding-left: 5px;
+        }
+        p, ul {
+            font-size: 13px; margin-bottom: 10px; padding-left: 10px;
+        }
+        ul { list-style-type: square; margin-left: 20px; }
+        .status-bar {
+            background-color: #C0C0C0; border-top: 1px solid #FFFFFF;
+            border-bottom: 1px solid #808080; padding: 2px 5px; font-size: 12px;
+            margin: 5px; border-style: inset; text-align: left;
+        }
+
+        /* --- Estilo para la Lista Interactiva (dentro de la UI Win98) --- */
+        .task-list-box {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #D0D0D0; /* Gris ligeramente diferente */
+            border-style: inset; /* Borde interior 3D */
+            border-width: 2px;
+            text-align: left;
+        }
+        
+        /* Estilo para los elementos de la lista */
+        .task-item {
+            cursor: pointer;
+            padding: 4px 0;
+            font-size: 14px;
+            /* Usamos un borde inferior simple para separar las tareas */
+            border-bottom: 1px solid #B0B0B0; 
+        }
+
+        /* Estilo cuando una tarea está completada (tachado) */
+        .completed {
+            text-decoration: line-through;
+            color: #888; /* Texto gris */
+        }

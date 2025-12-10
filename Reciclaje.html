@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reciclaje </title>
+    <link rel="stylesheet" href="Style4.css">
+</head>
+<body>
+
+    <div class="window">
+        <div class="title-bar">
+            <div class="title-bar-text">♻️ PROGRAMA DE RECICLAJE</div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize">_</button>
+                <button aria-label="Maximize">◻</button>
+                <button aria-label="Close">X</button>
+            </div>
+        </div>
+
+        <div class="window-content">
+            <h1>:: RECICLAJE Y SOSTENIBILIDAD ::</h1>
+            
+            <h2>Tipos de reciclaje</h2>
+            <p>
+                El reciclaje se clasifica por el material: papel y cartón, plásticos, vidrio, metales  y orgánicos (composta). Cada tipo tiene un proceso de recuperación específico.
+            </p>
+
+            <h2>Lista de Acción: Reduce tu Huella</h2>
+            <div class="task-list-box">
+                <p>Haz clic en las tareas completadas para registrarlas en el sistema.</p>
+            
+                <div id="taskList">      
+                </div>
+            </div>
+            
+            <h2>Economía circular vs lineal</h2>
+            <p>
+                Pasar de una economía lineal (producir, usar, tirar) a una economía circular (reutilizar, reparar, reciclar) es vital para la salud del planeta.
+            </p>
+
+            <h2>Beneficios ambientales y económicos</h2>
+            <p>
+                El reciclaje reduce la emisión de GEI, ahorra energía y agua, crea empleos y reduce la cantidad de desechos en vertederos.
+            </p>
+
+        </div> 
+
+        <div class="status-bar">
+            Script de lista cargado.
+        </div>
+    </div> 
+
+    <script>
+        const tasks = [
+            "Separar correctamente el plástico, papel y vidrio en casa.",
+            "Usar botellas de agua reutilizables en lugar de PET desechable.",
+            "Llevar bolsas de tela al supermercado.",
+            "Compostar los residuos orgánicos (frutas, verduras).",
+            "Donar ropa y aparatos electrónicos que ya no uses.",
+            "Evitar productos con exceso de envoltorios plásticos.",
+            "Reparar objetos rotos antes de tirarlos a la basura."
+        ];
+        const taskListDiv = document.getElementById("taskList");
+
+        function renderTasks() {
+            taskListDiv.innerHTML = '';
+            tasks.forEach((taskText, index) => {
+                const taskItem = document.createElement('div');
+                taskItem.classList.add('task-item');
+                taskItem.textContent = "☐ " + taskText;
+                taskItem.onclick = function() {
+                    toggleTask(index);
+                };
+                taskListDiv.appendChild(taskItem);
+            });
+        }
+        function toggleTask(index) {
+            const taskItem = taskListDiv.children[index];
+            if (taskItem.classList.contains('completed')) {
+                taskItem.classList.remove('completed');
+                taskItem.textContent = "☐ " + tasks[index];
+            } else {
+                taskItem.classList.add('completed');
+                taskItem.textContent = "☑ " + tasks[index];
+            }
+        }
+        renderTasks();
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fauna y Flora en Peligro</title>
+   <link rel="stylesheet" href="Style6.css">
+</head>
+<body>
+
+    <div class="window">
+        <div class="title-bar">
+            <div class="title-bar-text> REPORTE: FAUNA Y FLORA EN PELIGRO/div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize">_</button>
+                <button aria-label="Maximize">◻</button>
+                <button aria-label="Close">X</button>
+            </div>
+        </div>
+
+        <div class="window-content">
+            <h1>:: CRISIS DE BIODIVERSIDAD GLOBAL ::</h1>
+            
+            <h2>Especies en peligro</h2>
+            <p>
+                Actualmente, más de 41,000 especies están en peligro de extinción, según la UICN. La tasa de extinción actual es miles de veces mayor que la tasa natural histórica.
+            </p>
+
+            <h2>Pérdida de hábitats</h2>
+            <p>
+                La principal causa de la extinción. La deforestación, la urbanización y la agricultura intensiva destruyen los hogares de innumerables especies, dejándolas sin refugio ni alimento.
+            </p>
+
+            <div class="gallery-box">
+                <p>Galería de especies afectadas. Desliza para ver más.</p>
+                
+                <div class="gallery-container">
+                    
+                    <img class="gallery-slide" src="C:\Users\Jisue\Downloads\recursamiento\Proyecto final\fotos\seal.jpg" alt="Foca">
+                    
+                   
+                    <img class="gallery-slide" src="C:\Users\Jisue\Downloads\recursamiento\Proyecto final\fotos\Panda-rojo.jpg" alt="Panda Rojo">
+
+                    
+                    <img class="gallery-slide" src="C:\Users\Jisue\Downloads\recursamiento\Proyecto final\fotos\tigre-1024x683.jpg" alt="Tigre de Vengala">
+                    
+                    
+                    <img class="gallery-slide" src="C:\Users\Jisue\Downloads\recursamiento\Proyecto final\fotos\pandagigante.jpg" alt="Oso Panda">
+
+                    <img class="gallery-slide" src="C:\Users\Jisue\Downloads\recursamiento\Proyecto final\fotos\tortuga-carey.jpg" alt="Tortuga Carey">
+                    
+                    
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <p id="slide-caption" style="font-size: 11px; margin-top: 5px;">Imagen 1 de 4</p>
+            </div>
+            
+            <h2>Consecuencias en cadenas alimenticias</h2>
+            <p>
+                La desaparición de una sola especie puede tener efectos devastadores en toda una cadena alimenticia, desestabilizando ecosistemas completos.
+            </p>
+
+            <h2>Casos críticos </h2>
+            <p>
+                Regiones como la Selva Amazónica sufren deforestación masiva; los arrecifes de coral mueren por el blanqueamiento; y los bosques templados son fragmentados por el desarrollo humano.
+            </p>
+
+        </div> 
+        <div class="status-bar">
+            Galería JS cargada.
+        </div>
+    </div> 
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("gallery-slide");
+            let captionText = document.getElementById("slide-caption");
+            
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            
+            slides[slideIndex-1].style.display = "block";
+            captionText.textContent = slides[slideIndex-1].alt + " | Imagen " + slideIndex + " de " + slides.length;
+        }
+    </script>
+
+</body>
+</html>

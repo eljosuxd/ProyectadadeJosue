@@ -1,0 +1,126 @@
+body {
+            /* Típico fondo de escritorio de la época (azul cielo sólido) */
+            background-color: #008080; 
+            font-family: 'MS Sans Serif', Arial, Helvetica, sans-serif;
+            color: #000000;
+            margin: 0;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .window {
+            width: 700px;
+            /* El color gris del sistema operativo */
+            background-color: #C0C0C0; 
+            border: 1px solid #FFFFFF;
+            /* Bordes biselados (3D effect) */
+            border-style: outset; 
+            max-width: 90%; 
+        }
+
+        .title-bar {
+            background: linear-gradient(to right, #000080, #108ED4); /* Barra de título azul */
+            color: white;
+            padding: 3px 5px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: default;
+        }
+
+        .title-bar-text {
+            font-size: 14px;
+        }
+
+        .title-bar-controls button {
+            background-color: #C0C0C0;
+            border: 1px solid #000000;
+            padding: 0 5px;
+            font-size: 12px;
+            margin-left: 2px;
+            cursor: pointer;
+        }
+
+        .window-content {
+            padding: 15px;
+            background-color: #FFFFFF; /* Área de contenido blanca */
+            border: 1px solid #808080;
+            margin: 5px;
+            overflow-y: auto;
+            /* Tus elementos centrados aquí */
+            text-align: center; 
+        }
+
+        h1 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #000000;
+        }
+        
+        p, h6 {
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        /* --- Estilos para el menú desplegable (adaptados a Win98) --- */
+        .menu-container {
+            position: relative;
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+        .menu-button {
+            /* Estilo de botón 3D de Win98 */
+            background-color: #C0C0C0;
+            border-style: outset;
+            border-width: 2px;
+            border-color: #fff #808080 #808080 #fff;
+            padding: 5px 12px;
+            font-family: 'MS Sans Serif', Arial, Helvetica, sans-serif;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        .menu-content {
+            display: none; /* Oculto por defecto */
+            position: absolute;
+            background-color: #C0C0C0; /* Gris Win98 */
+            min-width: 200px;
+            box-shadow: 2px 2px 0 #000; /* Sombra simple */
+            z-index: 1;
+            border: 1px solid #000000;
+            text-align: left;
+        }
+
+        .menu-content a {
+            color: black;
+            padding: 5px 10px;
+            text-decoration: none;
+            display: block;
+            font-size: 13px;
+        }
+
+        .menu-content a:hover {
+            background-color: #000080; /* Azul de selección Win98 */
+            color: white;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .status-bar {
+            background-color: #C0C0C0;
+            border-top: 1px solid #FFFFFF;
+            border-bottom: 1px solid #808080;
+            padding: 2px 5px;
+            font-size: 12px;
+            margin: 5px;
+            border-style: inset;
+            text-align: left;
+        }
